@@ -1,0 +1,16 @@
+body {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+h1, p {
+  text-align: center;
+}
+
+#meal {
+  height: 650px;
+  width: auto;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size:contain;
+}
