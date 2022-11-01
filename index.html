@@ -10,9 +10,12 @@
 <body>
   <h1>Hobbit Mealtime</h1>
   <p id="time"></p>
+  <p id="mealTime"></p>
   <div id="meal"></div>
   <script>
     const mealDiv = document.getElementById("meal");
+    const pTime = document.getElementById("time");
+    const pMeal = document.getElementById("mealTime");
 
     window.onload = currentTime();
 
@@ -27,20 +30,28 @@
 
       if (hours >= 6 && hours < 8) {
         mealDiv.style.backgroundImage = "url(./images/breakfast.jpg)"
+        pMeal.textContent = "It's breakfast time!";
       } else if (hours >= 8 && hours < 10) {
         mealDiv.style.backgroundImage = "url(./images/second-breakfast.jpg)"
+        pMeal.textContent = "What about second breakfast?";
       } else if (hours >= 10 && hours < 12) {
         mealDiv.style.backgroundImage = "url(./images/elevenses.jpg)"
+        pMeal.textContent = "Now for elevenses!";
       } else if (hours >= 12 && hours < 14) {
         mealDiv.style.backgroundImage = "url(./images/lunch.jpg)"
+        pMeal.textContent = "Lunch? Already?";
       } else if (hours >= 14 && hours < 16) {
         mealDiv.style.backgroundImage = "url(./images/tea.png)"
+        pMeal.textContent = "Time for a cup of tea.";
       } else if (hours >= 16 && hours < 18) {
         mealDiv.style.backgroundImage = "url(./images/dinner.jpg)"
+        pMeal.textContent = "Dinner! Now we feast.";
       } else if (hours >= 20 && hours < 22) {
         mealDiv.style.backgroundImage = "url(./images/supper.jpg)"
+        pMeal.textContent = "And so to survive the night, we sup.";
       } else {
         mealDiv.style.backgroundImage = "url(./images/no-meal.png)"
+        pMeal.textContent = "Alas there are no meals currently. You must fast till the next one.";
       }
     }
 
