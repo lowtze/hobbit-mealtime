@@ -11,5 +11,39 @@
   <h1>Hobbit Mealtime</h1>
   <p id="time"></p>
   <div id="meal"></div>
+  <script>
+    const mealDiv = document.getElementById("meal");
+
+    window.onload = currentTime();
+
+    function currentTime() {
+      const d = new Date();
+      let hours = d.getHours();
+      let minutes = d.getMinutes();
+
+      document.getElementById("time").textContent = "It is currently: " + d.toLocaleTimeString();
+
+      setTimeout(currentTime, 1000);
+
+      if (hours >= 6 && hours < 8) {
+        mealDiv.style.backgroundImage = "url(./images/breakfast.jpg)"
+      } else if (hours >= 8 && hours < 10) {
+        mealDiv.style.backgroundImage = "url(./images/second-breakfast.jpg)"
+      } else if (hours >= 10 && hours < 12) {
+        mealDiv.style.backgroundImage = "url(./images/elevenses.jpg)"
+      } else if (hours >= 12 && hours < 14) {
+        mealDiv.style.backgroundImage = "url(./images/lunch.jpg)"
+      } else if (hours >= 14 && hours < 16) {
+        mealDiv.style.backgroundImage = "url(./images/tea.png)"
+      } else if (hours >= 16 && hours < 18) {
+        mealDiv.style.backgroundImage = "url(./images/dinner.jpg)"
+      } else if (hours >= 20 && hours < 22) {
+        mealDiv.style.backgroundImage = "url(./images/supper.jpg)"
+      } else {
+        mealDiv.style.backgroundImage = "url(./images/no-meal.png)"
+      }
+    }
+
+  </script>
 </body>
 </html>
